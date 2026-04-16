@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Solicitud</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4fdf7;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-top: 0;
+            color: #14532d;
+        }
+        form p {
+            margin-bottom: 14px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #16a34a;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button:hover {
+            background: #15803d;
+        }
+        .links {
+            margin-top: 18px;
+        }
+        a {
+            color: #16a34a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Solicitud</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar solicitud</button>
+        </form>
+
+        <div class="links">
+            <a href="{% url 'registro_asistencia' %}">Ir a formulario de asistencia</a>
+        </div>
+    </div>
+</body>
+</html>
